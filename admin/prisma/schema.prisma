@@ -1,0 +1,10 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+
+model User { id String @id @default(cuid()); email String? @unique; name String?; createdAt DateTime @default(now()); seoPages SeoPage[] @relation("UpdatedBy") }
+model SeoPage { id String @id @default(cuid()); kind SeoPageKind; name String; path String @unique; title String?; description String?; canonicalUrl String?; robots String @default("index,follow"); imageAlt String?; structuredData Json?; status SeoStatus @default(DRAFT); updatedAt DateTime @updatedAt; updatedById String?; updatedBy User? @relation("UpdatedBy", fields:[updatedById], references:[id]); keywords Keyword[]; @@index([kind,status]) }
+model Keyword { id String @id @default(cuid()); term String; intent KeywordIntent; priority Int @default(3); source String?; searchVolume Int?; difficulty Float?; position Float?; pageId String?; page SeoPage? @relation(fields:[pageId], references:[id], onDelete:SetNull); createdAt DateTime @default(now()); @@unique([term,pageId]) }
+model AuditRun { id String @id @default(cuid()); startedAt DateTime @default(now()); completedAt DateTime?; status AuditStatus @default(RUNNING); findings AuditFinding[] }
+model AuditFinding { id String @id @default(cuid()); severity Severity; code String; message String; url String; suggestion String; auditId String; audit AuditRun @relation(fields:[auditId],references:[id],onDelete:Cascade); createdAt DateTime @default(now()); @@index([auditId,severity]) }
+model Integration { id String @id @default(cuid()); provider Provider @unique; status IntegrationStatus @default(DISCONNECTED); lastSyncAt DateTime?; error String?; encryptedRefreshToken String?; updatedAt DateTime @updatedAt }
+enum SeoPageKind { PRODUCT CATEGORY PAGE } enum SeoStatus { DRAFT PUBLISHED } enum KeywordIntent { INFORMATIONAL COMMERCIAL TRANSACTIONAL NAVIGATIONAL } enum AuditStatus { RUNNING COMPLETE FAILED } enum Severity { CRITICAL HIGH MEDIUM LOW } enum Provider { SEARCH_CONSOLE GA4 } enum IntegrationStatus { DISCONNECTED CONNECTED ERROR }
