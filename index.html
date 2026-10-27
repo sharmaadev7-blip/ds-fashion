@@ -14,6 +14,78 @@
     @media(max-width:720px){nav{height:60px;padding:0 20px}.links{display:none}.menu{display:block}.links.open{display:flex;position:absolute;top:60px;left:0;right:0;padding:22px 20px;background:#090909;flex-direction:column;align-items:flex-start;gap:21px}.hero{padding:120px 20px 50px}.hero h1{font-size:108px}.hero h2{font-size:34px}.hero:before{background:linear-gradient(90deg,#000d,#0003),linear-gradient(0deg,#050505,transparent 40%)}section{padding:84px 20px}.intro,.about,.contact{grid-template-columns:1fr;gap:35px}.collection-grid,.product-grid{grid-template-columns:1fr}.collection{min-height:460px}.section-head{margin-bottom:30px}.product-grid{gap:45px}.product-image{height:370px}.philosophy{padding-top:0}.philosophy>div{grid-template-columns:1fr;gap:5px}.ig-grid{grid-template-columns:1fr 1fr;gap:5px}.tile{height:180px}.contact h2{font-size:78px}.contact a{font-size:17px}footer{grid-template-columns:1fr}.footer-links{justify-content:flex-start}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.modal-inner{padding:28px 20px}.detail-list{grid-template-columns:90px 1fr}.shop{padding:11px 13px}.menu+ .shop{display:none}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://thesz.com/#organization",
+        "name": "STREETZ",
+        "url": "https://thesz.com/",
+        "logo": "https://thesz.com/ds-editorial-campaign.png",
+        "description": "STREETZ is an Indian unisex streetwear brand creating modern, expressive and accessible fashion."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://thesz.com/#website",
+        "url": "https://thesz.com/",
+        "name": "STREETZ",
+        "publisher": { "@id": "https://thesz.com/#organization" },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://thesz.com/#webpage",
+        "url": "https://thesz.com/",
+        "name": "D/S — The Fashion Starts Here",
+        "description": "D/S is a contemporary Gen Z streetwear brand creating modern, expressive and accessible fashion.",
+        "isPartOf": { "@id": "https://thesz.com/#website" },
+        "about": { "@id": "https://thesz.com/#organization" },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://thesz.com/#collection",
+        "name": "D/S Featured Streetwear",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 3,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": { "@id": "https://thesz.com/#waffle-knit" } },
+          { "@type": "ListItem", "position": 2, "item": { "@id": "https://thesz.com/#henley" } },
+          { "@type": "ListItem", "position": 3, "item": { "@id": "https://thesz.com/#bootcut-jeans" } }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://thesz.com/#waffle-knit",
+        "name": "D/S Waffle Knit",
+        "description": "A textured essential designed for effortless layering and everyday streetwear.",
+        "image": "https://thesz.com/ds-editorial-campaign.png",
+        "brand": { "@type": "Brand", "name": "D/S" },
+        "offers": { "@type": "Offer", "url": "https://thesz.com/#products", "priceCurrency": "INR", "price": "1499" }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://thesz.com/#henley",
+        "name": "D/S Henley",
+        "description": "A refined everyday silhouette with a relaxed attitude and premium streetwear character.",
+        "image": "https://thesz.com/ds-editorial-campaign.png",
+        "brand": { "@type": "Brand", "name": "D/S" },
+        "offers": { "@type": "Offer", "url": "https://thesz.com/#products", "priceCurrency": "INR", "price": "1299" }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://thesz.com/#bootcut-jeans",
+        "name": "D/S Bootcut Jeans",
+        "description": "A modern bootcut silhouette designed to bring structure and attitude to the D/S wardrobe.",
+        "image": "https://thesz.com/ds-editorial-campaign.png",
+        "brand": { "@type": "Brand", "name": "D/S" },
+        "offers": { "@type": "Offer", "url": "https://thesz.com/#products", "priceCurrency": "INR", "price": "2499" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
